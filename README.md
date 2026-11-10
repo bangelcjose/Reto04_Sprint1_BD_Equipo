@@ -34,10 +34,6 @@ En el **Sprint 2** se abordarán los roles y privilegios por función, la carga 
 - No crearás todavía `api_equipo`, `chat_equipo`, `lector_equipo` ni los roles correspondientes.
 - No realizarás todavía las copias y restauraciones del Sprint 2.
 
-La VM es el **laboratorio de práctica**. El SQL y la documentación que prepares serán la base que el equipo revisará y adaptará cuando se concrete el entorno de nube y el modelo de DAM.
-
-![Arquitectura del laboratorio y destino del proyecto](images/00_arquitectura_sprint1.png)
-
 ## Metadatos del operador
 
 | Campo | Valor |
@@ -65,7 +61,6 @@ La tabla `contenidos` es **provisional y didáctica**. Los ejemplos (`vid-0001`,
 4. Evidencias propias: estructura creada y conexión como `admin_equipo`.
 5. `docs/acuerdo_integracion_sprint1.md`: registra los acuerdos o asuntos pendientes con DAM sobre identificadores y rutas.
 
-![Flujo de trabajo del Reto 4](images/01_flujo_reto4.png)
 
 ## 3. Cuentas que utilizarás
 
@@ -173,7 +168,6 @@ La tabla contiene:
 | `ruta_repositorio` | Ruta relativa del fichero o carpeta en el repositorio. |
 | `fecha_alta` | Fecha y hora de alta, generada por MySQL. |
 
-![Modelo provisional de la tabla contenidos](images/02_modelo_contenidos.png)
 
 ### B.1 Comprobar las tablas
 
@@ -199,7 +193,7 @@ ORDER BY id_contenido;
 
 📸 **Evidencia 1 (hoy):** guarda una captura donde se vea la consulta y el resultado de `SELECT`, con las tres filas y las columnas. También debe poder identificarse la conexión utilizada. Nombre recomendado:
 
-`capturas/01_estructura_y_datos.png`
+![ESTRUCTURA](capturas/01_estructura_y_datos.PNG)
 
 **Punto de control B:** existe `proyecto_udit`, contiene `contenidos` y aparecen los tres registros.
 
@@ -272,7 +266,7 @@ SHOW GRANTS;
 
 📸 **Evidencia 2 (hoy):** guarda una captura donde se vea `CURRENT_USER()` y `SHOW GRANTS` desde `MySQL - admin_equipo`. No debe verse la contraseña.
 
-Nombre recomendado: `capturas/02_conexion_admin_equipo.png`
+![CONEXION](capturas/02_conexion_admin_equipo.PNG)
 
 **Punto de control C:** `admin_equipo` conecta desde el PC físico y tiene permisos sobre `proyecto_udit`.
 
