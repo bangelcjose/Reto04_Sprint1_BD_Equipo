@@ -42,12 +42,12 @@ La VM es el **laboratorio de práctica**. El SQL y la documentación que prepare
 
 | Campo | Valor |
 |---|---|
-| Alumno/a | _Nombre y apellidos_ |
-| Usuario de GitHub | _@usuario_ |
+| Alumno/a | _Angel Barrios Cuesta_ |
+| Usuario de GitHub | _@bangelcjose_ |
 | Equipo del Proyecto Integrado | _N.º de equipo_ |
-| IP de la VM (servidor de laboratorio) | _IP real_ |
-| IP del PC físico (cliente) | _IP real_ |
-| Fecha | _dd/mm/2026_ |
+| IP de la VM (servidor de laboratorio) | 192.168.56.101 |
+| IP del PC físico (cliente) | 192.168.56.1 |
+| Fecha | 10/11/2026 |
 
 ## 1. Situación profesional
 
@@ -144,7 +144,7 @@ Anota la IP que MySQL reconoce en el resultado de `CURRENT_USER()`. Es la IP que
 Si no conecta, repite la prueba del escalón:
 
 ```powershell
-Test-NetConnection -ComputerName <IP_SERVIDOR> -Port 3306
+Test-NetConnection -ComputerName 192.168.56.101 -Port 3306
 ```
 
 Sustituye `<IP_SERVIDOR>` por la IP real de la VM. Debe aparecer `TcpTestSucceeded : True`.
@@ -221,7 +221,7 @@ En este reto creas una cuenta propia del proyecto llamada `admin_equipo`. No es 
 1. Abre `db/02_usuario_admin.sql`.
 2. Guarda una copia local llamada `db/02_usuario_admin.local.sql`.
 3. En esa copia sustituye los marcadores:
-   - `[SUSTITUIR_IP_CLIENTE]`: por la IP del PC físico que MySQL reconoce en `CURRENT_USER()` al conectar como `admin_udit`.
+   - `[192.168.56.1]`: por la IP del PC físico que MySQL reconoce en `CURRENT_USER()` al conectar como `admin_udit`.
    - `[SUSTITUIR_CONTRASENA_ADMIN]`: por una contraseña propia de laboratorio.
 4. Comprueba con Buscar que no queda ningún texto `[SUSTITUIR_` en la copia local.
 
@@ -234,7 +234,7 @@ CREATE USER IF NOT EXISTS 'admin_equipo'@'IP_REAL_DEL_CLIENTE'
 IDENTIFIED BY 'CONTRASENA_LOCAL';
 
 GRANT ALL PRIVILEGES ON proyecto_udit.*
-TO 'admin_equipo'@'IP_REAL_DEL_CLIENTE';
+TO 'admin_equipo'@'192.168.56.1';
 ```
 
 - `CREATE USER`: crea una cuenta MySQL. La cuenta se identifica por usuario y host.
